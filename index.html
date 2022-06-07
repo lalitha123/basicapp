@@ -1,9 +1,24 @@
+<!DOCTYPE html>
 <html>
-  <head><title>Basic Progressive Web Application</title></head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello Caching World!</title>
+  </head>
   <body>
-    <h1>Basic Progressive Web Application</h1>
-    <div>
-      <p>Testing Website in Online/Offline</p>
-    </div>
+    <!-- Image -->
+    <img src="/images/hello.png" />                                  1
+    <!-- JavaScript -->
+    <script async src="/js/script.js"></script>                      2
+<script>
+// Register the service worker if ('serviceWorker' in navigator) {   3
+     navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+    // Registration was successful
+    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+}).catch(function(err) {                                             4
+    // registration failed :(
+    console.log('ServiceWorker registration failed: ', err);
+    });
+}
+</script>
   </body>
 </html>
