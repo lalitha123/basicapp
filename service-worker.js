@@ -6,7 +6,8 @@ self.addEventListener('install', event => {
     caches.open(cacheName)
     .then(cache => cache.addAll([                               
       '/basicapp/js/script.js',
-      '/basicapp/hello.png'
+      '/basicapp/hello.png',
+      '/basicapp/about_us.jpg'
     ]))
   );
 });
